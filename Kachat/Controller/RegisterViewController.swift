@@ -1,5 +1,5 @@
 //
-//  KachatViewController.swift
+//  RegisterViewController.swift
 //  Kachat
 //
 //  Created by Gino Tasis on 3/8/22.
@@ -7,9 +7,10 @@
 
 import UIKit
 
-class KachatViewController: UIViewController {
+class RegisterViewController: UIViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,8 @@ class KachatViewController: UIViewController {
     }
     
 
+    @IBAction func registerPressed(_ sender: UIButton) {
+    }
     /*
     // MARK: - Navigation
 

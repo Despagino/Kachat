@@ -1,5 +1,5 @@
 //
-//  KachatViewController.swift
+//  ChatViewController.swift
 //  Kachat
 //
 //  Created by Gino Tasis on 3/8/22.
@@ -7,9 +7,11 @@
 
 import UIKit
 
-class KachatViewController: UIViewController {
+class ChatViewController: UIViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var messageTextField: UITextField!
+    @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,8 @@ class KachatViewController: UIViewController {
     }
     
 
+    @IBAction func sendPressed(_ sender: UIButton) {
+    }
     /*
     // MARK: - Navigation
 
