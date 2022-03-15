@@ -33,9 +33,10 @@ class ChatViewController: UIViewController {
     
     func loadMessages() {
         
-        messageData.messages = []
-        
-        db.collection("messages").getDocuments { (querySnapshot, err) in
+        db.collection("messages").addSnapshotListener { (querySnapshot, err) in
+            
+            self.messageData.messages = []
+            
             if let err = err {
                 print("Error getting messages: \(err)")
             } else {
@@ -46,6 +47,10 @@ class ChatViewController: UIViewController {
                         if let sender = data["sender"] as? String, let messageBody = data["body"] as? String {
                             let newMessage = Message(sender: sender, body: messageBody)
                             self.messageData.messages.append(newMessage)
+                            
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
                         }
                     }
                 }
@@ -61,6 +66,7 @@ class ChatViewController: UIViewController {
                     print(er.localizedDescription)
                 } else {
                     print("Succesfully saved data")
+                    self.messageTextField.text = ""
                 }
             }
         }
