@@ -52,6 +52,9 @@ class ChatViewController: UIViewController {
                             
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                // when the page loads, we scroll all the way down to the bottom
+                                let indexPath = IndexPath(row: self.messageData.messages.count - 1, section: 0)
+                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
                             }
                         }
                     }
