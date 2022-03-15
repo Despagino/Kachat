@@ -14,29 +14,30 @@ class KachatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         titleLabel.text = ""
         var charIndex = 0.0
         var loop = 0.0
-        var titleText = "Kachat"
+        let titleText = "Kachat"
         for letter in titleText  {
-            Timer.scheduledTimer(withTimeInterval: 0.4 * charIndex, repeats: false) { timer in
+            Timer.scheduledTimer(withTimeInterval: 0.15 * charIndex, repeats: false) { timer in
                 self.titleLabel.text?.append(letter)
             }
             charIndex += 1
         }
-        Timer.scheduledTimer(withTimeInterval: 4.6, repeats: false) { timer in
-            for letter in self.titleLabel.text! {
-                Timer.scheduledTimer(withTimeInterval: 0.32 * loop, repeats: false) { timer in
+        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { timer in
+            for _ in self.titleLabel.text! {
+                Timer.scheduledTimer(withTimeInterval: 0.15 * loop, repeats: false) { timer in
                     self.titleLabel.text?.removeLast()
                 }
                 loop += 1
             }
         }
-        
-        Timer.scheduledTimer(withTimeInterval: 6.6, repeats: false) { timer in
+
+        Timer.scheduledTimer(withTimeInterval: 3.5 , repeats: false) { timer in
             charIndex = 0.0
             for letter in titleText {
-                Timer.scheduledTimer(withTimeInterval: 0.4 * charIndex, repeats: false) { timer in
+                Timer.scheduledTimer(withTimeInterval: 0.15 * charIndex, repeats: false) { timer in
                     self.titleLabel.text?.append(letter)
                 }
                 charIndex += 1
