@@ -61,7 +61,11 @@ class ChatViewController: UIViewController {
     @IBAction func sendPressed(_ sender: UIButton) {
         
         if let messageBody = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
-            db.collection("messages").addDocument(data: ["sender": messageSender, "body": messageBody]) { error in
+            db.collection("messages").addDocument(
+                data: ["sender": messageSender,
+                       "body": messageBody,
+                       "date": Date().timeIntervalSince1970
+                      ]) { error in
                 if let er = error {
                     print(er.localizedDescription)
                 } else {
