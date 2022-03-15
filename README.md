@@ -11,6 +11,8 @@ Database: Firestore
 
 ### Registering first account
 ![vid1](https://user-images.githubusercontent.com/80994897/158481688-aaff0479-a2ce-41d0-b26d-f9c85dc41ee5.gif)
+
+### Firestore Database shows the message I just sent
 <img width="521" alt="Screen Shot 2022-03-15 at 6 15 59 PM" src="https://user-images.githubusercontent.com/80994897/158481706-4c4c4a74-fbf4-4e9c-a825-fab0484e3412.png">
 
 ### Registering second account
